@@ -65,9 +65,8 @@ Cada pasta e arquivo possui uma função específica dentro do sistema, sendo re
 * PHP
 * HTML
 * CSS
+* Bootstrap
 * MySQL
-* Git
-* GitHub
 * XAMPP
 
 ---
