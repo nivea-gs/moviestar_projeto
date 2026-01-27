@@ -9,11 +9,11 @@
   $movieDao = new MovieDAO($conn, $BASE_URL);
 
   // Buscar os filmes mais recentes
-  $latestMovies = $movieDao->getLatestMovies();
+  $latestMovies = $movieDao->getLatestMovies() ?? []; /// Operador de Coalescencia nula
 
   // Buscar filmes de categorias específicas
-  $actionMovies = $movieDao->getMoviesByCategory("Ação");
-  $comedyMovies = $movieDao->getMoviesByCategory("Comédia");
+  $actionMovies = $movieDao->getMoviesByCategory("Ação") ?? [];
+  $comedyMovies = $movieDao->getMoviesByCategory("Comédia") ?? [];
 ?>
 <div id="main-container" class="container-fluid">
 
