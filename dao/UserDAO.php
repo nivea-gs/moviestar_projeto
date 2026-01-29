@@ -36,7 +36,7 @@ class UserDAO implements UserDAOInterface {
         // Autenticar usuário, caso auth seja true
         $stmt = $this->conn->prepare("INSERT INTO users(name, lastname, password, email,  token) VALUES(:name, :email, :password, :lastname, :token) ");
 
-        $stmt->bindParam(":name", $user->name);
+        $stmt->bindParam(":name", $user->name, PDO::PARAM_STR);
         $stmt->bindParam(":name", $user->lastname);
         $stmt->bindParam(":name", $user->password);
         $stmt->bindParam(":name", $user->email);
