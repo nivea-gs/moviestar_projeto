@@ -34,14 +34,29 @@ class UserDAO implements UserDAOInterface {
 
     public function create(User $user, $authUser = false) {
         // Autenticar usuário, caso auth seja true
-        return true;
+        $stmt = $this->conn->prepare("INSERT INTO users(name, lastname, password, email,  token) VALUES(:name, :email, :password, :lastname, :token) ");
+
+        $stmt->bindParam(":name", $user->name);
+        $stmt->bindParam(":name", $user->lastname);
+        $stmt->bindParam(":name", $user->password);
+        $stmt->bindParam(":name", $user->email);
+        $stmt->bindParam(":name", $user->token);
+
+        $stmt->execute();
+        
+        if($authUser){
+            $this->setTokenToSession($user->token);
+        }
     }
 
     public function update(User $user, $redirect = true) {
+        $stmt->conn->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->bindParam(":email", $user->email);
+        $stmt->execute();
         if($redirect) {
             // Redireciona para o perfil do usuario
         }
-        return true;
+        
     }
 
     public function verifyToken($protected = false) {
