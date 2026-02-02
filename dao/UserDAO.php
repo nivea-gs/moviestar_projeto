@@ -12,7 +12,7 @@ class UserDAO implements UserDAOInterface {
     public function __construct(PDO $conn, $url, $message) {
         $this->conn = $conn;
         $this->url = $url;
-        $this->message = new Message($url);
+        $this->message = $message;
     }
 
     public function buildUser($data) {
