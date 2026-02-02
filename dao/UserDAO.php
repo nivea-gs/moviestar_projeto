@@ -2,8 +2,7 @@
 
 // O __DIR__ garante que o PHP parta da pasta 'dao'
 require_once(__DIR__ . "/../models/User.php");
-
-require_once("models/Message.php");
+require_once(__DIR__ . "/../models/Message.php");
 
 class UserDAO implements UserDAOInterface {
 
