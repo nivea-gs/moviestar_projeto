@@ -53,7 +53,7 @@ class UserDAO implements UserDAOInterface {
     }
 
     public function update(User $user, $redirect = true) {
-        $stmt->conn->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt= $this->conn->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(":email", $user->email);
         $stmt->execute();
 
