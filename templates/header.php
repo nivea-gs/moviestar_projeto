@@ -48,7 +48,7 @@
     <?php if(isset($_SESSION[""])): ?> <!--usando variavel if para verificar a existência de cadastro de usuário--> 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a href="newmovie.php" class="nav-link"><i class="bi bi-plus-square"></i>Incluir Filme</a>
+        <a href="<? $BASE_URL ?>newmovie.php" class="nav-link"><i class="bi bi-plus-square"></i>Incluir Filme</a>
       </li>
       <li class="nav-item">
         <a href="html" class="nav-link">Meus Filmes</a>
@@ -57,11 +57,11 @@
         <a href="#" class="nav-link bold">name</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Sair</a>
+        <a href="<? $BASE_URL ?>logout.php" class="nav-link">Sair</a>
       </li>
          <?php else: ?>
       <li class="nav-item">
-        <!-- <a href="auth.php" class="nav-link">Entrar / Cadastrar</a> -->
+        <a href="<? $BASE_URL ?>auth.php" class="nav-link">Entrar / Cadastrar</a>
       </li>
     </ul>
   </nav>
