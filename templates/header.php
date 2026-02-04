@@ -45,7 +45,7 @@
       <input type="text" name="q" id="search" placeholder="Buscar Filmes" aria-label="Search">
       <button type="submit"><i class="bi bi-search"></i></button>
     </form> <!--vericação de usuario -->
-    <?php if(isset($_SESSION[""])): ?> <!--usando variavel if para verificar a existência de cadastro de usuário--> 
+    <?php if(isset($_SESSION["usario_logado"])): ?> <!--usando variavel if para verificar a existência de cadastro de usuário--> 
     <ul class="navbar-nav">
       <li class="nav-item">
         <a href="<? $BASE_URL ?>newmovie.php" class="nav-link"><i class="bi bi-plus-square"></i>Incluir Filme</a>
